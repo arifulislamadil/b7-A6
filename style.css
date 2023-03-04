@@ -47,12 +47,8 @@
 #text{
     position: absolute;
     color:white;
-    z-index: 22;
-    
+    z-index: 22;   
 }
 
-#image-text{
-    border:"2px solid blue";
-    background-color: red;
-}
+
 
