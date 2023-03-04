@@ -176,7 +176,6 @@ const showAllFeatures=(features)=>{
   });
 }
 
-
 // add loader 
 const toggleSpinner = (isLoading) => {
   const loaderSection = document.getElementById("loader");
