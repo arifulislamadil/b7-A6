@@ -146,7 +146,6 @@ const showAllFeatures=(features)=>{
   // clear previous features 
   container.innerHTML="";
   // show all features 
-
   console.log(features);
   features.map((feature) => {
     const div = document.createElement("div");
