@@ -9,7 +9,6 @@ loadData();
 
 const displayData = (features) => {
   const container = document.getElementById("features-container");
-  console.log(features.length)
   //show fist six features
   features = features.slice(0, 6);
 
@@ -63,20 +62,29 @@ const displayFeatureDetails = (features) => {
   details.innerText = `
   ${features.description.slice(0,100)}
   `;
+  // condition of price 
+  const price = features.pricing[0].price;
 
+//condition for accuracy
+const textAccuracy = "accuracy"
+const accuracy = features.accuracy.score ;
 //  condition for integrations 
  const integrations1= features.integrations[0];
  const integrations2= features.integrations[1];
  const integrations3= features.integrations[2];
 
- console.log(integrations3);
+
+ //Condition for text
+ const chatText = features.input_output_examples[0].output.slice(0,100);
+ 
+ 
   modalBody.innerHTML = `
   <div class="d-flex flex-column flex-sm-row flex-md-row flex-lg-row">
   
         <div class="border border-secondary-subtle p-3 me-2">
         <div id="ser-price" class="d-flex">
         <div>
-          <p class="m-0">${features.pricing[0].price}</p>
+          <p class="m-0">${price === "0" ? "free of cost" : price}</p>
           <p>${features.pricing[0].plan}</p>
         </div>
         <div>
@@ -109,14 +117,14 @@ const displayFeatureDetails = (features) => {
   <div>
   <div id="image-text">
       <div id="text" class="d-flex justify-content-end">
-      <span class="text-left bg-danger bg-gradient ps-2 pe-2 pt-2 pb-2 rounded">${features.accuracy.score} accuracy</span>
+     ${accuracy!== undefined && accuracy !== null ?  `<span class="text-left bg-danger bg-gradient ps-2 pe-2 pt-2 pb-2 rounded">${accuracy} <span>accuracy</span></span>`:""}
       </div>
     <div id="image-main">
         <img id="feature-details-image" class="image-fluid" src="${features.image_link[0]}" alt="logo"/>
     </div> 
   </div>
   <h5>${features.input_output_examples[0].input}</h5>
-  <p>${features.input_output_examples[0].output.slice(0,50)}</p>
+  ${chatText.includes("function") ? "No!! not yet ! take a break" : chatText}
   </div>
   
   </div>
