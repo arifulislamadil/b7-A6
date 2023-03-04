@@ -3,7 +3,7 @@ const loadData = async () => {
   const res = await fetch(url);
   const data = await res.json();
   displayData(data.data.tools);
-// showAllFeatures(data.data.tools)
+  
 };
 loadData();
 
@@ -145,7 +145,6 @@ const showAllFeatures=(features)=>{
   
   // clear previous features 
   container.innerHTML="";
-  
   // show all features 
   features.map((feature) => {
     const div = document.createElement("div");
@@ -174,13 +173,10 @@ const showAllFeatures=(features)=>{
     `;
     container.appendChild(div);
   });
-  
-
-
 }
 
 
-
+// add loader 
 const toggleSpinner = (isLoading) => {
   const loaderSection = document.getElementById("loader");
   if (isLoading) {
@@ -190,3 +186,4 @@ const toggleSpinner = (isLoading) => {
   }
 };
 
+//sort data depending on dates;
