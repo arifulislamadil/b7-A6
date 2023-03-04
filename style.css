@@ -1,0 +1,54 @@
+#arrow-icon{
+    border: 1px solid lightpink;
+    padding: 5px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    color:red
+
+}
+
+#arrow-icon:hover{
+    background-color: red;
+    color: white;
+}
+
+#feature-img{
+    height: 180px;
+}
+#modal-content{
+    background-color: rgb(250, 246, 242);
+}
+#ser-price div{
+    background-color: rgb(255, 255, 255);
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color:black;
+    
+}
+
+#modal{
+    width: 600px;
+    height: 100%;
+}
+
+#feature-details-image{
+    width: 200px;
+    height: 200px;
+}
+#image-main{
+    position: relative;
+   
+
+}
+
+
+#text{
+    position: absolute;
+    color:white;
+    z-index: 22;
+    
+}
+
+
