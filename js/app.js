@@ -160,7 +160,6 @@ const showAllFeatures=(features)=>{
                   </div>       
         </div>
     </div>
-    
     `;
     container.appendChild(div);
   });
