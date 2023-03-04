@@ -1,19 +1,19 @@
+//Load data
 const loadData = async () => {
   const url = "https://openapi.programming-hero.com/api/ai/tools";
   const res = await fetch(url);
   const data = await res.json();
   displayData(data.data.tools);
-  
 };
 loadData();
 
+
+//display features
 const displayData = (features) => {
+  
   const container = document.getElementById("features-container");
   //show fist six features
   features = features.slice(0, 6);
-
-
-  
   //show feature
   features.map((feature) => {
     const div = document.createElement("div");
@@ -131,7 +131,7 @@ const accuracy = features.accuracy.score ;
   `;
 };
 
-
+//load data for show more
 const allFeatures=async()=>{
   const url = "https://openapi.programming-hero.com/api/ai/tools";
   const res = await fetch(url);
@@ -139,13 +139,14 @@ const allFeatures=async()=>{
   showAllFeatures(data.data.tools);
 }
 
-
+//show all data by click on show more
 const showAllFeatures=(features)=>{
   const container = document.getElementById("features-container");
-  
+  console.log(features);
   // clear previous features 
   container.innerHTML="";
   // show all features 
+  console.log(features);
   features.map((feature) => {
     const div = document.createElement("div");
     div.classList.add("col");
