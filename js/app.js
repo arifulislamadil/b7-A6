@@ -44,7 +44,6 @@ const displayData = (features) => {
     `;
     toggleSpinner(true)
     container.appendChild(div);
-   
   });
  
 };
@@ -64,6 +63,13 @@ const displayFeatureDetails = (features) => {
   details.innerText = `
   ${features.description.slice(0,100)}
   `;
+
+//  condition for integrations 
+ const integrations1= features.integrations[0];
+ const integrations2= features.integrations[1];
+ const integrations3= features.integrations[2];
+
+ console.log(integrations3);
   modalBody.innerHTML = `
   <div class="d-flex flex-column flex-sm-row flex-md-row flex-lg-row">
   
@@ -93,10 +99,9 @@ const displayFeatureDetails = (features) => {
         <div>
         <h4>Integrations</h4>
         <ul>
-          <li><p class="m-0 ">${features.integrations[0]}</p></li>
-          <li><p class="m-0 ">${features.integrations[1]}</p></li>
-          <li><p class="m-0 ">${features.integrations[2]}</p></li>
-        
+          <li><p class="m-0 ">${integrations1!== undefined? integrations1 : 'no data found'}</p></li>
+          <li><p class="m-0 ">${integrations2!== undefined? integrations2 : 'no data found'}</p></li>
+          <li><p class="m-0 ">${integrations3!== undefined? integrations3 : 'no data found'}</p></li>
         </ul></div>
       
       </div>
@@ -124,8 +129,6 @@ const allFeatures=async()=>{
   const res = await fetch(url);
   const data = await res.json();
   showAllFeatures(data.data.tools);
-
-
 }
 
 
