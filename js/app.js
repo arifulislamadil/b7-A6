@@ -163,7 +163,6 @@ const showAllFeatures=(features)=>{
     
     `;
     container.appendChild(div);
-    
   });
   
 
